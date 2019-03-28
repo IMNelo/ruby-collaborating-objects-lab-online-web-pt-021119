@@ -1,6 +1,6 @@
 class Artist
 
-  attr_accessor :artist, :name, :songs
+  attr_accessor :name, :songs
 
   @@all = []
 
@@ -24,7 +24,7 @@ class Artist
   end
 
   def self.find_or_create_by_name(name)
-    self.all.find { |artist| artist.name == name} || Artist.new(name)
+    self.all.find { |artist| artist.name == name } || Artist.new(name)
     #self.all-> take saved artists from the @@all = []
     #find / detect-> iterate through the @@all = []
     #artist.name == name-> when a match is found, add it & return it
